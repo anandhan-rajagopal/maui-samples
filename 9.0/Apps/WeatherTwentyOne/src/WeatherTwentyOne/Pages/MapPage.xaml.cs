@@ -6,4 +6,9 @@ public partial class MapPage : ContentPage
     {
         InitializeComponent();
     }
+
+    private void ImageButton_Clicked(object sender, EventArgs e)
+    {
+
+    }
 }
