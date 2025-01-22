@@ -17,7 +17,7 @@
     <RootNamespace>WeatherTwentyOne</RootNamespace>
     <ApplicationTitle>WeatherTwentyOne</ApplicationTitle>
     <ApplicationId>com.companyname.WeatherTwentyOne</ApplicationId>
-    <EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
+    <EnablePreviewMsixTooling>false</EnablePreviewMsixTooling>
     <SingleProject>true</SingleProject>
     <ApplicationVersion>1</ApplicationVersion>
 
@@ -41,7 +41,7 @@
 
 	<!-- To generate MSIX as part of dotnet publish -->
 	<PropertyGroup Condition="$(TargetFramework.Contains('-windows')) and '$(Configuration)' == 'Release'">
-		<GenerateAppxPackageOnBuild>true</GenerateAppxPackageOnBuild>
+		<GenerateAppxPackageOnBuild>false</GenerateAppxPackageOnBuild>
 		<!-- <AppxPackageSigningEnabled>true</AppxPackageSigningEnabled> -->
 	</PropertyGroup>
 
