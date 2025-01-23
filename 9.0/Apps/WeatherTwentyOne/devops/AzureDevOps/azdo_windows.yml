@@ -97,19 +97,19 @@ stages:
         targetType: 'inline'
         script: |
           cd 9.0\Apps\WeatherTwentyOne\src\
-          dotnet publish -f net9.0-windows10.0.19041.0 -c Release
+          dotnet build -f net9.0-windows10.0.19041.0 -c Release
 
     # # https://docs.microsoft.com/en-us/windows/msix/desktop/cicd-overview
     # - task: DownloadSecureFile@1
     #   inputs:
     #     secureFile: '<WINDOWS SIGNING CERT PFX>'
 
-    - task: CopyFiles@2
-      inputs:
-        Contents: |
-          **\**\9.0\Apps\WeatherTwentyOne\src\WeatherTwentyOne\bin\Release\net9.0-windows10.0.19041.0\win10-x64/**/*.msix
-          9.0\Apps\WeatherTwentyOne\src\WeatherTwentyOne\bin\Release\net9.0-windows10.0.19041.0\win10-x64/**/*.msix
-        TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    # - task: CopyFiles@2
+    #   inputs:
+    #     Contents: |
+    #       **\**\9.0\Apps\WeatherTwentyOne\src\WeatherTwentyOne\bin\Release\net9.0-windows10.0.19041.0\win10-x64/**/*.msix
+    #       9.0\Apps\WeatherTwentyOne\src\WeatherTwentyOne\bin\Release\net9.0-windows10.0.19041.0\win10-x64/**/*.msix
+    #     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
   #  #https://docs.microsoft.com/en-us/windows/msix/desktop/azure-dev-ops
   #  #Create secret pipeline variable WindowsCertSecret with cert password
