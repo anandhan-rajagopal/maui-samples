@@ -1,4 +1,5 @@
 ﻿using Microsoft.Maui.LifecycleEvents;
+using Syncfusion.Maui.Core.Hosting;
 using WeatherTwentyOne.Pages;
 using WeatherTwentyOne.ViewModels;
 
@@ -47,7 +48,7 @@ public static class MauiProgram
 
 
 
-
+        builder.ConfigureSyncfusionCore();
         return builder.Build();
     }
 }

@@ -2,25 +2,43 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:m="clr-namespace:WeatherTwentyOne.Models"
+    xmlns:syncfusion="clr-namespace:Syncfusion.Maui.TreeView;assembly=Syncfusion.Maui.TreeView"
+    xmlns:local="clr-namespace:WeatherTwentyOne"
     xmlns:v="clr-namespace:WeatherTwentyOne.Views"
     Title="Wind Map"
     Shell.NavBarIsVisible="{OnIdiom True, Desktop=False}"
     x:Class="WeatherTwentyOne.Pages.MapPage">
 
-    <Grid
-        Grid.Row="{OnPlatform iOS=1, Default=0}"
-        ColumnDefinitions="{OnIdiom Phone='*', Default='*,480'}"
-        RowDefinitions="*">
+    <ContentPage.BindingContext>
+        <local:FileManagerViewModel x:Name="viewModel"/>
+    </ContentPage.BindingContext>
 
-        <!-- Main content -->
-        <WebView
-            Source="https://embed.windy.com" />
+    <syncfusion:SfTreeView x:Name="treeView" 
+   ItemsSource="{Binding ImageNodeInfo}" 
+   ChildPropertyName="SubFiles">
+        <syncfusion:SfTreeView.ItemTemplate>
+            <DataTemplate>
+                <Label LineBreakMode="NoWrap"
+       Text="{Binding ItemName}"
+       VerticalTextAlignment="Center"/>
 
-        <!-- Widget panel -->
-        <v:WidgetsPanel
-            IsVisible="{OnIdiom Phone=False, Default=True}"
-            Grid.Column="{OnIdiom Phone=0, Default=1}" />
-            
-    </Grid>
+            </DataTemplate>
+        </syncfusion:SfTreeView.ItemTemplate>
+
+        <syncfusion:SfTreeView.ExpanderTemplate>
+            <DataTemplate>
+                <Grid>
+                    <ImageButton
+Margin="0,12,0,0"
+Clicked="ImageButton_Clicked"
+HorizontalOptions="Center"
+Source="dotnet_bot.png"
+VerticalOptions="Center"
+WidthRequest="24" />
+                </Grid>
+            </DataTemplate>
+        </syncfusion:SfTreeView.ExpanderTemplate>
+
+    </syncfusion:SfTreeView>
 
 </ContentPage>
