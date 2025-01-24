@@ -96,8 +96,8 @@ stages:
       inputs:
         targetType: 'inline'
         script: |
-          cd 9.0\Apps\WeatherTwentyOne\src\
-          dotnet build -f net9.0-windows10.0.19041.0 -c Release
+          cd 8.0\Apps\WeatherTwentyOne\src\
+          dotnet build -f net8.0-windows10.0.19041.0 -c Release
 
     # # https://docs.microsoft.com/en-us/windows/msix/desktop/cicd-overview
     # - task: DownloadSecureFile@1
@@ -107,8 +107,8 @@ stages:
     - task: CopyFiles@2
       inputs:
         Contents: |
-          **\**\9.0\Apps\WeatherTwentyOne\src\WeatherTwentyOne\bin\**
-          9.0\Apps\WeatherTwentyOne\src\WeatherTwentyOne\bin\**
+          **\**\8.0\Apps\WeatherTwentyOne\src\WeatherTwentyOne\bin\**
+          8.0\Apps\WeatherTwentyOne\src\WeatherTwentyOne\bin\**
         TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
   #  #https://docs.microsoft.com/en-us/windows/msix/desktop/azure-dev-ops
