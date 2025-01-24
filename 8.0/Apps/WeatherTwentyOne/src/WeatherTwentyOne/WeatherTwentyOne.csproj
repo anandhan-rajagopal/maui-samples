@@ -21,6 +21,8 @@
     <SingleProject>true</SingleProject>
     <ApplicationVersion>1</ApplicationVersion>
 
+	<WindowsPackageType>None</WindowsPackageType>
+
 	<!-- (Optional) Pin to a specific version -->
 	<!--<MauiVersion>6.0.101-preview.11.2349</MauiVersion>-->
 
