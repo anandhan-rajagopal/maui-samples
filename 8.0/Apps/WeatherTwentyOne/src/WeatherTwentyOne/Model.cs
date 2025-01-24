@@ -10,10 +10,10 @@ namespace WeatherTwentyOne
 {
     public class FileManager : INotifyPropertyChanged
     {
-        private string itemName;
-        private ObservableCollection<FileManager> subFiles;
+        private string? itemName;
+        private ObservableCollection<FileManager>? subFiles;
 
-        public ObservableCollection<FileManager> SubFiles
+        public ObservableCollection<FileManager>? SubFiles
         {
             get { return subFiles; }
             set
@@ -23,7 +23,7 @@ namespace WeatherTwentyOne
             }
         }
 
-        public string ItemName
+        public string? ItemName
         {
             get { return itemName; }
             set
@@ -35,7 +35,7 @@ namespace WeatherTwentyOne
 
         
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         public void RaisedOnPropertyChanged(string propertyName)
         {
