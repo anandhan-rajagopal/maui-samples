@@ -20,7 +20,6 @@
     <EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
     <SingleProject>true</SingleProject>
     <ApplicationVersion>1</ApplicationVersion>
-
 	<WindowsPackageType>None</WindowsPackageType>
 
 	<!-- (Optional) Pin to a specific version -->
